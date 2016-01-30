@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Waiyi-FuelTrack</string>
+    <string name="button_navtitle">Begin Tracking</string>
+    <string name="button_addEntry">Add new entry</string>
+    <string name="button_editlog">Edit existing entry</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_view">View log entries</string>
+    <string name="button_overall">View overall fuel costs</string>
+    <string name="action_settings">Settings</string>
+    <string name="proj_welcome">Welcome to FuelTrack</string>
+    <string name="button_select">Select</string>
+    <string name="station">Eg. Location</string>
+    <string name="odometer">Eg. 0.0 km</string>
+    <string name="date">yyyy/mm/dd</string>
+    <string name="grade">Eg. Regular</string>
+    <string name="amount">Enter in L to 3 decimal</string>
+    <string name="unit">Enter in ¢/L to 1 decimal</string>
+    <string name="total">Total</string>
+    <string name="exit">Exit</string>
+    <string name="save">Save</string>
+    <string name="previous">Previous</string>
+    <string name="title_activity_overall">OverallActivity</string>
+    <string name="back">Back to Menu</string>
+    <string name="total_overall"> The total fuel costs is </string>
+
+</resources>

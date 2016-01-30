@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:background="@drawable/side_nav"
+    android:paddingBottom="30dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="30dp"
+    android:paddingTop="0dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:weightSum="1"
+    android:baselineAligned="false">
+
+    <ImageView
+        android:id="@+id/imageFuel"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:paddingTop="0dp"
+        android:src="@mipmap/ic_fuel"
+        android:contentDescription="fuel" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="70dp"
+        android:text="@string/proj_welcome"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <Button
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:text="@string/button_navtitle"
+        android:textSize="20pt"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+</LinearLayout>
+
