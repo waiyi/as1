@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav"
+    tools:context="a1.waiyi_fueltrack.ViewListActivity"
+    tools:showIn="@layout/activity_view_list"
+    android:id="@+id/content_view_list"
+    android:orientation="vertical"
+    android:paddingTop="50dp"
+    android:paddingLeft="20dp"
+    android:weightSum="1" >
+
+</LinearLayout>

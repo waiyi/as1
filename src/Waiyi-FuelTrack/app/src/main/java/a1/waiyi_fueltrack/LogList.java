@@ -6,11 +6,15 @@ import java.util.List;
 /**
  * Created by Fisherman on 2016-01-27.
  */
-// Log equals to a list of entry
-public class Log {
+// LogList equals to a list of entry
+public class LogList {
     private List<Entry> log;
 
-    public Log() { this.log = new ArrayList<Entry>();  }
+    public LogList() { this.log = new ArrayList<Entry>();  }
+
+    public LogList(ArrayList<Entry> oldLog){
+        this.log = oldLog;
+    }
 
     public List<Entry> getLog () {  return log;    }
 

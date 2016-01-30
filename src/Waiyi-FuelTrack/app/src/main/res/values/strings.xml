@@ -11,7 +11,7 @@
     <string name="button_select">Select</string>
     <string name="station">Eg. Location</string>
     <string name="odometer">Eg. 0.0 km</string>
-    <string name="date">yyyy/mm/dd</string>
+    <string name="date">yyyy-mm-dd</string>
     <string name="grade">Eg. Regular</string>
     <string name="amount">Enter in L to 3 decimal</string>
     <string name="unit">Enter in ¢/L to 1 decimal</string>
@@ -22,5 +22,10 @@
     <string name="title_activity_overall">OverallActivity</string>
     <string name="back">Back to Menu</string>
     <string name="total_overall"> The total fuel costs is </string>
+    <string name="title_activity_add">AddActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_view_log">ViewLogActivity</string>
+    <string name="title_activity_view_list">ViewListActivity</string>
 
 </resources>

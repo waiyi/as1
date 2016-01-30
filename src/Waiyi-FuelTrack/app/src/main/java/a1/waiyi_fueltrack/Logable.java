@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by Fisherman on 2016-01-25.
  */
 public interface Logable {
-    public Date getDate();
+    public String getDate();
     public String getStation();
     public double getOdometer();
     public String getGrade();

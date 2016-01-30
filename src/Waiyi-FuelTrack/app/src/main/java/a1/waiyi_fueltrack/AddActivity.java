@@ -1,40 +1,28 @@
 package a1.waiyi_fueltrack;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.test.ActivityUnitTestCase;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-public class AddActivity extends Activity {
+public class AddActivity extends AppCompatActivity {
 
-    private static final String FILENAME = "file.sav";
-    private List<Entry> log;
+
     private Entry newEntry;
+
     private EditText addDate;
     private EditText addStation;
     private EditText addOdo;
@@ -42,9 +30,7 @@ public class AddActivity extends Activity {
     private EditText addAmt;
     private EditText addUnit;
     private double eachTotal;
-    private int logIndex;
     private Gson gson;
-    private Log newLog;
 
     public void onCreate(Bundle savedInstanceState) {
 
@@ -68,10 +54,26 @@ public class AddActivity extends Activity {
         Button addButton = (Button) findViewById(R.id.save);
         addButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                setResult(RESULT_OK);
-                Intent intent = new Intent(AddActivity.this, Entry.class);
-                startActivity(intent);
+
+                String textDate = addDate.getText().toString();
+                String textStation = addStation.getText().toString();
+                double textOdo =  Double.parseDouble(addOdo.getText().toString());
+                String textGrade = addGrade.getText().toString();
+                double textAmt =  Double.parseDouble(addAmt.getText().toString());
+                double textUnit =  Double.parseDouble(addUnit.getText().toString());
+
+                newEntry = new Entry(textDate, textStation, textOdo, textGrade, textAmt, textUnit);
+
+
+                if (ViewLogActivity.getLogIndex()== -1){
+                    DisplayActivity.getLogList().add(newEntry);
+                }
+
+                // TODO: store data in log
+                Intent intent = new Intent(AddActivity.this, ViewLogActivity.class);
                 saveInFile();
+                startActivity(intent);
+
             }
         });
 
@@ -86,17 +88,11 @@ public class AddActivity extends Activity {
         });
     }
 
+    @Override
     protected void onStart(){
         super.onStart();
-        logIndex += 1;
 
-        String textDate = addDate.getText().toString();
-        String textStation = addStation.getText().toString();
-        String textOdo = addOdo.getText().toString();
-        String textGrade = addGrade.getText().toString();
-        String textAmt = addAmt.getText().toString();
-        String textUnit = addUnit.getText().toString();
-        saveInFile();
+
 
 
         //TODO: fix setVariable to aVariable or textVariable??
@@ -113,18 +109,18 @@ public class AddActivity extends Activity {
 
     private void saveInFile(){
         try {
-            FileOutputStream fos = openFileOutput(FILENAME,
+            FileOutputStream fos = openFileOutput(DisplayActivity.FILENAME,
                     0);
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
             Gson gson = new Gson();
+            //TODO: FixMe pls!!!! save log to file
             gson.toJson(newEntry, out);
+            //TODO: SaveInFile();
             out.flush();
             fos.close();
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             throw new RuntimeException();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             throw new RuntimeException();
         }
     }

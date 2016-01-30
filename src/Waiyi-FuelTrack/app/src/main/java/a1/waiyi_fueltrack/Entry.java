@@ -17,9 +17,9 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-public class Entry
+public class Entry implements Logable
 {
-    private Date date;
+    private String date;
     private String station;
     private double odometer;
     private String grade;
@@ -27,8 +27,8 @@ public class Entry
     private double unitCost;
     private double total;
 
-    public Entry(Date aDate, String aStation, double aOdometer, String aGrade, double aAmount,
-                 double aUnitCost, double aTotal)
+    public Entry(String aDate, String aStation, double aOdometer, String aGrade, double aAmount,
+                 double aUnitCost)
     {
         this.date = aDate;
         this.station = aStation;
@@ -36,16 +36,15 @@ public class Entry
         this.grade = aGrade;
         this.amount= aAmount;
         this.unitCost = aUnitCost;
-        this.total = aTotal;
         updateTotalCost();
 
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date aDate) {
+    public void setDate(String aDate) {
         this.date = aDate;
     }
 
@@ -63,7 +62,7 @@ public class Entry
 
     public void setOdometer(double aOdometer){
         this.odometer = aOdometer;
-        this.odometer = Double.parseDouble(new DecimalFormat("##.#").format(this.odometer));
+ //       this.odometer = Double.parseDouble(new DecimalFormat("##.#").format(this.odometer));
     }
 
     public String getGrade() {
@@ -80,7 +79,8 @@ public class Entry
 //TODO: check if the right variable set to the proper format
     public void setAmount(double aAmount) {
         this.amount = aAmount;
-        this.amount =Double.parseDouble(new DecimalFormat("##.###").format(this.amount));
+//        this.amount =Double.parseDouble(new DecimalFormat("##.###").format(this.amount));
+        updateTotalCost();
     }
 
     public double getUnitCost() {
@@ -89,7 +89,7 @@ public class Entry
 
     public void setUnitCost(double aUnitCost){
         this.unitCost = aUnitCost;
-        this.unitCost = Double.parseDouble(new DecimalFormat("##.#").format(this.unitCost));
+//        this.unitCost = Double.parseDouble(new DecimalFormat("##.#").format(this.unitCost));
         updateTotalCost();
     }
 
@@ -101,8 +101,6 @@ public class Entry
         return total;
     }
 
-    public void setTotal(double aTotal) {
-        this.total = aTotal;
-        this.total = Double.parseDouble(new DecimalFormat("##.##").format(this.total));
-    }
+ //       this.total = Double.parseDouble(new DecimalFormat("##.##").format(this.total));
+
 }

@@ -18,7 +18,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class OverallActivity extends AppCompatActivity {
-    public Log logTotal;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overall);
@@ -37,8 +38,8 @@ public class OverallActivity extends AppCompatActivity {
 
         TextView textTotal = new TextView(this);
         textTotal.setTextSize(20);
-        //TODO: Fix accumulative total -- how to call from Log class
- //       textTotal.setText(Log.getAccumTotal);
+        //TODO: Fix accumulative total -- how to call from LogList class
+ //       textTotal.setText(LogList.getAccumTotal);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.content_overall);
         layout.addView(textDate);
