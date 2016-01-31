@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -17,7 +18,6 @@ import com.google.gson.Gson;
 public class ViewLogActivity extends AppCompatActivity {
 
     private static int logIndex = -1;
-    private ListAdapter adapter;
     private RadioGroup radioList;
     private String totalCost;
 
@@ -50,11 +50,15 @@ public class ViewLogActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        logListView = (ListView) findViewById(R.id.log_layout);
+        logListView = (ListView) findViewById(R.id.listView2);
 
+        logListView.setAdapter(DisplayActivity.getAdapter());
     }
+
 
     public static int getLogIndex() {
         return logIndex;
     }
+
+
 }

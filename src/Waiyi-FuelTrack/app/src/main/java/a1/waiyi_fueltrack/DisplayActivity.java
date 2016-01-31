@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -26,6 +28,7 @@ public class DisplayActivity extends AppCompatActivity {
 
     public static final String FILENAME = "a1.waiyi_fueltrack.file.sav";
     private static LogList logList;
+    private static ListAdapter adapter;
 
     public static LogList getLogList() {
         return logList;
@@ -39,6 +42,8 @@ public class DisplayActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         loadFromFile();
+        adapter = new ArrayAdapter<Entry>(this, R.layout.list_entry,
+                DisplayActivity.getLogList().getLog());
 
         Button addButton = (Button) findViewById(R.id.add);
 
@@ -96,7 +101,9 @@ public class DisplayActivity extends AppCompatActivity {
         //return tweets.toArray(new String[tweets.size()]);
     }
 
-
+    public static ListAdapter getAdapter() {
+        return adapter;
+    }
 }
 
 

@@ -103,4 +103,11 @@ public class Entry implements Logable
 
  //       this.total = Double.parseDouble(new DecimalFormat("##.##").format(this.total));
 
+    public String toString(){
+     return (date + " \n " + station + "\n" + new DecimalFormat("#0.0").format(odometer) + "\n"
+                + grade + "\n" + new DecimalFormat("#0.000").format(amount) + "\n"
+                + new DecimalFormat("#0.0").format(unitCost) + "\n"
+                + new DecimalFormat("#0.00").format(total) + "\n");
+ }
+
 }

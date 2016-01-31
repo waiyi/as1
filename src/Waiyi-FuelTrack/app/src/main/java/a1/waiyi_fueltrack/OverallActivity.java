@@ -40,7 +40,6 @@ public class OverallActivity extends AppCompatActivity {
 
         TextView textTotal = (TextView) findViewById(R.id.textTotal);
  //       textTotal.setTextSize(20);
-        //TODO: Fix accumulative total -- how to call from LogList class
         String df = new DecimalFormat("#0.00").format(DisplayActivity.getLogList().getAccumTotal());
         textTotal.setText(df);
 

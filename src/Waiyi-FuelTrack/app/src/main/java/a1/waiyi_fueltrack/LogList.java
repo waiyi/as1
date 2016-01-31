@@ -27,4 +27,8 @@ public class LogList {
         for(Entry entry : log){ accumTotal += entry.getTotal(); }
         return accumTotal;
     }
+
+    public void setLog (int logIndex, Entry entry){
+        this.log.set(logIndex, entry);
+    }
 }

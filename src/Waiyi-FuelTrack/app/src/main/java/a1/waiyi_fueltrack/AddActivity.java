@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -68,10 +69,13 @@ public class AddActivity extends AppCompatActivity {
                 if (ViewLogActivity.getLogIndex()== -1){
                     DisplayActivity.getLogList().add(newEntry);
                 }
+                else{
+                    DisplayActivity.getLogList().setLog(ViewLogActivity.getLogIndex(), newEntry);
+                }
 
-                // TODO: store data in log
                 Intent intent = new Intent(AddActivity.this, ViewLogActivity.class);
                 saveInFile();
+                ((ArrayAdapter)DisplayActivity.getAdapter()).notifyDataSetChanged();
                 startActivity(intent);
 
             }
@@ -88,34 +92,13 @@ public class AddActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart(){
-        super.onStart();
-
-
-
-
-        //TODO: fix setVariable to aVariable or textVariable??
-/*        newEntry.setDate(textDate);
-        newEntry.setStation(textStation);
-        newEntry.setOdometer(double textOdo);
-        newEntry.setAmount(textAmt);
-        newEntry.setUnitCost(double textUnit);
-
-        newEntry(logIndex).add(newEntry);
-*/    }
-
-
-
     private void saveInFile(){
         try {
             FileOutputStream fos = openFileOutput(DisplayActivity.FILENAME,
                     0);
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
             Gson gson = new Gson();
-            //TODO: FixMe pls!!!! save log to file
-            gson.toJson(newEntry, out);
-            //TODO: SaveInFile();
+            gson.toJson(DisplayActivity.getLogList().getLog(), out);
             out.flush();
             fos.close();
         } catch (FileNotFoundException e) {
