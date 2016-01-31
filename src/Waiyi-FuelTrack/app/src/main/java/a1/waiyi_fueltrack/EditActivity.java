@@ -5,19 +5,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-// viewlist should have an select button to allow user for editing a selected entry
-public class ViewListActivity extends AppCompatActivity {
+// should have an select button to allow user for editing a selected entry
+public class EditActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_list);
+        setContentView(R.layout.activity_edit);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_view_list, menu);
+        getMenuInflater().inflate(R.menu.menu_edit, menu);
         return true;
     }
 

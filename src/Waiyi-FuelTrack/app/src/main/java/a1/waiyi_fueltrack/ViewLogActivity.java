@@ -41,7 +41,7 @@ public class ViewLogActivity extends AppCompatActivity {
 
         editButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(ViewLogActivity.this, ViewListActivity.class);
+                Intent intent = new Intent(ViewLogActivity.this, EditActivity.class);
                 startActivity(intent);
             }
         });

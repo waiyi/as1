@@ -47,8 +47,8 @@
             android:label="@string/title_activity_view_log" >
         </activity>
         <activity
-            android:name=".ViewListActivity"
-            android:label="@string/title_activity_view_list" >
+            android:name=".EditActivity"
+            android:label="@string/title_activity_edit" >
         </activity>
     </application>
 

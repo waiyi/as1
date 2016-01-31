@@ -27,5 +27,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_view_log">ViewLogActivity</string>
     <string name="title_activity_view_list">ViewListActivity</string>
+    <string name="title_activity_edit">EditActivity</string>
 
 </resources>

@@ -65,7 +65,7 @@ public class DisplayActivity extends AppCompatActivity {
         //TODO: Fix this edit activity later, thanks
         editButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(DisplayActivity.this, ViewLogActivity.class);
+                Intent intent = new Intent(DisplayActivity.this, EditActivity.class);
                 startActivity(intent);
             }
         });
