@@ -31,4 +31,8 @@ public class LogList {
     public void setLog (int logIndex, Entry entry){
         this.log.set(logIndex, entry);
     }
+
+    public Entry get(int logIndex){
+        return log.get(logIndex);
+    }
 }

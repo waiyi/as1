@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 // should have an select button to allow user for editing a selected entry
@@ -61,10 +62,17 @@ public class EditActivity extends AppCompatActivity {
         //eachTotal = editLog.getTotal();
 
 
+        editDate.setText(DisplayActivity.getLogList().get(ViewLogActivity.getLogIndex()).getDate());
+        editStation.setText(DisplayActivity.getLogList().get(ViewLogActivity.getLogIndex()).getStation());
+        editOdo.setText(new DecimalFormat("#0.0").format(DisplayActivity.getLogList().
+                get(ViewLogActivity.getLogIndex()).getOdometer()));
+        editGrade.setText(DisplayActivity.getLogList().get(ViewLogActivity.getLogIndex()).getGrade());
+        editAmt.setText(new DecimalFormat("#0.0").format(DisplayActivity.getLogList().
+                get(ViewLogActivity.getLogIndex()).getAmount()));
+        editUnit.setText(new DecimalFormat("#0.0").format(DisplayActivity.getLogList().
+                get(ViewLogActivity.getLogIndex()).getUnitCost()));
+
         Button saveButton = (Button) findViewById(R.id.saveUpdate);
-        if (saveButton == null){
-            Log.e("savebutton", "nullbutton");
-        }
         saveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO: assign editVariables to indexed item

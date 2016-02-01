@@ -1,36 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/side_nav"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/content_edit"
-    android:background="@drawable/side_nav"
-    android:orientation="vertical">
+    android:paddingTop="50dp"
+    android:paddingLeft="20dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_edit"
+    android:weightSum="1">
 
     <TextView
-        android:id="@+id/oldLogTitle"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:text="My Log History" />
+        android:text="Date"
+        android:textSize="10pt"
+        android:id="@+id/checkDate"
+        android:checked="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/checkDate"
+        android:layout_alignStart="@+id/station"
+        android:hint="@string/date" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Station"
+        android:textSize="10pt"
+        android:id="@+id/checkStation"
+        android:layout_below="@+id/date"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+    <EditText
+        android:id="@+id/station"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:hint="@string/station"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/checkStation"
+        android:layout_toEndOf="@+id/checkStation"
+        android:layout_marginStart="35dp" />
+    <TextView
+        android:id="@+id/checkOdometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Odometer"
+        android:textSize="10pt"
+        android:layout_below="@+id/station"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+    <EditText
+        android:id="@+id/odometer"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/station"
+        android:layout_alignStart="@+id/station"
+        android:hint="@string/odometer" />
+    <TextView
+        android:id="@+id/checkGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fuel grade"
+        android:textSize="10pt"
+        android:layout_below="@+id/odometer"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+    <EditText
+        android:id="@+id/grade"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/odometer"
+        android:layout_alignStart="@+id/odometer"
+        android:hint="@string/grade" />
+    <TextView
+        android:id="@+id/checkUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unit Cost"
+        android:textSize="10pt"
+        android:layout_below="@+id/grade"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+    <EditText
+        android:id="@+id/unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="fill_horizontal"
+        android:layout_below="@+id/grade"
+        android:layout_alignStart="@+id/grade"
+        android:hint="@string/unit" />
+
+    <TextView
+        android:id="@+id/checkAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textSize="10pt"
+        android:layout_below="@+id/unit"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="fill_horizontal"
+        android:layout_below="@+id/unit"
+        android:layout_alignStart="@+id/unit"
+        android:hint="@string/amount" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/overall"
+        android:textSize="10pt"
+        android:layout_below="@+id/amount"
+        android:layout_alignParentStart="true" />
     <Button
         android:id="@+id/saveUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_editlog"
-        android:layout_gravity="center_horizontal" />
-    <Button
-        android:id="@+id/newEntry"
-        android:layout_width="fill_parent"
-        android:text="@string/button_addEntry"
-        android:layout_height="wrap_content" />
+        android:text="@string/save"
+        android:layout_gravity="center_horizontal"
+        android:onClick="saveEdit"
+        android:layout_below="@+id/amount"
+        android:layout_alignEnd="@+id/grade"
+        android:layout_marginTop="64dp" />
+
     <Button
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/back"
+        android:text="@string/button_cancel"
         android:layout_gravity="center_horizontal"
         android:onClick="back"
-        android:paddingRight="20dp" />
-</LinearLayout>
+        android:paddingRight="20dp"
+        android:layout_below="@+id/overall"
+        android:layout_alignStart="@+id/saveUpdate" />
+</RelativeLayout>
