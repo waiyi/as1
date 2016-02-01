@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+// source of fuel image from
+// http://worldartsme.com/fuel-clipart.html#gal_post_110822_fuel-clipart-1.jpg
 
 public class Begin_Activity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "a1.waiyi_fueltrack.MESSAGE";

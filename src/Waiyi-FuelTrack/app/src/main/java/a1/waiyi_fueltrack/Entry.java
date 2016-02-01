@@ -28,7 +28,7 @@ public class Entry implements Logable
     private double total;
 
     public Entry(String aDate, String aStation, double aOdometer, String aGrade, double aAmount,
-                 double aUnitCost)
+                 double aUnitCost, double aTotal)
     {
         this.date = aDate;
         this.station = aStation;
@@ -37,6 +37,7 @@ public class Entry implements Logable
         this.amount= aAmount;
         this.unitCost = aUnitCost;
         updateTotalCost();
+        this.total = aTotal;
 
     }
 
@@ -56,13 +57,10 @@ public class Entry implements Logable
         this.station = aStation;
     }
 
-    public double getOdometer() {
-        return (odometer);
-    }
+    public double getOdometer() { return odometer; }
 
     public void setOdometer(double aOdometer){
         this.odometer = aOdometer;
- //       this.odometer = Double.parseDouble(new DecimalFormat("##.#").format(this.odometer));
     }
 
     public String getGrade() {
@@ -76,10 +74,9 @@ public class Entry implements Logable
     public double getAmount(){
         return amount;
     }
-//TODO: check if the right variable set to the proper format
+
     public void setAmount(double aAmount) {
         this.amount = aAmount;
-//        this.amount =Double.parseDouble(new DecimalFormat("##.###").format(this.amount));
         updateTotalCost();
     }
 
@@ -89,7 +86,6 @@ public class Entry implements Logable
 
     public void setUnitCost(double aUnitCost){
         this.unitCost = aUnitCost;
-//        this.unitCost = Double.parseDouble(new DecimalFormat("##.#").format(this.unitCost));
         updateTotalCost();
     }
 
@@ -101,13 +97,12 @@ public class Entry implements Logable
         return total;
     }
 
- //       this.total = Double.parseDouble(new DecimalFormat("##.##").format(this.total));
-
     public String toString(){
-     return (date + " \n " + station + "\n" + new DecimalFormat("#0.0").format(odometer) + "\n"
-                + grade + "\n" + new DecimalFormat("#0.000").format(amount) + "\n"
-                + new DecimalFormat("#0.0").format(unitCost) + "\n"
-                + new DecimalFormat("#0.00").format(total) + "\n");
+     return ("Date:  \t") + date + " \nStation:  \t" + station + "\nOdometer:  \t"
+             + new DecimalFormat("#0.0").format(odometer) + "\nGrade:  \t" + grade + "\nAmount: \t "
+             + new DecimalFormat("#0.000").format(amount) + "\nUnitCost:  \t"
+             + new DecimalFormat("#0.0").format(unitCost) + "\nTotal:  \t"
+             + new DecimalFormat("#0.00").format(total);
  }
 
 }

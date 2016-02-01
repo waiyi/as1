@@ -38,20 +38,14 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
 
-     /*   editDate = (EditText) findViewById(R.id.date);
-        editStation = (EditText) findViewById(R.id.station);
-        editOdo = (EditText) findViewById(R.id.odometer);
-        editAmt = (EditText) findViewById(R.id.amount);
-        editUnit = (EditText) findViewById(R.id.unit);
-        editTotal = newEntry.getTotal();
-*/
         addDate = (EditText) findViewById(R.id.date);
         addStation = (EditText) findViewById(R.id.station);
         addOdo = (EditText) findViewById(R.id.odometer);
         addGrade = (EditText) findViewById(R.id.grade);
         addAmt = (EditText) findViewById(R.id.amount);
         addUnit = (EditText) findViewById(R.id.unit);
-//        eachTotal = newEntry.getTotal();
+ //       eachTotal = newEntry.getTotal();
+        //TODO: When adding nothing and save empty, error msg and jump to empty log
         Button addButton = (Button) findViewById(R.id.save);
         addButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -62,9 +56,13 @@ public class AddActivity extends AppCompatActivity {
                 String textGrade = addGrade.getText().toString();
                 double textAmt =  Double.parseDouble(addAmt.getText().toString());
                 double textUnit =  Double.parseDouble(addUnit.getText().toString());
+                double textTotal = textAmt*textUnit/100;
 
-                newEntry = new Entry(textDate, textStation, textOdo, textGrade, textAmt, textUnit);
-
+                newEntry = new Entry(textDate, textStation, textOdo, textGrade, textAmt, textUnit,
+                                    textTotal);
+                if ((textDate == "") &&((textStation == "") | (textTotal == 0.0))) {
+                    //TODO: popup message "Entry not Saved" and do nothing or jump back to menu
+                }
 
                 if (ViewLogActivity.getLogIndex()== -1){
                     DisplayActivity.getLogList().add(newEntry);
@@ -77,19 +75,16 @@ public class AddActivity extends AppCompatActivity {
                 saveInFile();
                 ((ArrayAdapter)DisplayActivity.getAdapter()).notifyDataSetChanged();
                 startActivity(intent);
-
             }
         });
 
-        Button cancelButton = (Button) findViewById(R.id.cancel);
-
+        Button backButton = (Button) findViewById(R.id.back);
         // once pressed cancel, jump back to menu page without saving.
-        cancelButton.setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(AddActivity.this, DisplayActivity.class);
                 startActivity(intent);
-            }
-        });
+            }});
     }
 
     private void saveInFile(){

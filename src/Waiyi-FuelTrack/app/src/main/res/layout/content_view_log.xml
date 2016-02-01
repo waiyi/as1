@@ -10,15 +10,20 @@
     android:paddingTop="20dp"
     android:paddingBottom="0dp"
     android:weightSum="1" >
-
-
+    <TextView
+        android:id="@+id/viewLogTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:textSize="20sp"
+        android:text="Click on the entry for editing" />
 
     <LinearLayout
         android:id="@+id/log_layout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
+        android:layout_height="match_parent"
+        android:layout_below="@id/viewLogTitle">
 
         <ListView
             android:layout_width="wrap_content"
@@ -30,19 +35,21 @@
 
 
     <Button
-        android:id="@+id/edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_editlog"
-        android:layout_gravity="center_horizontal"
-        android:layout_above="@+id/newEntry"
-        android:layout_centerHorizontal="true" />
-    <Button
         android:id="@+id/newEntry"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:text="@string/button_addEntry"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/edit"
-        android:layout_alignStart="@+id/edit" />
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:layout_gravity="center_horizontal"
+        android:onClick="back"
+        android:paddingRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/newEntry" />
 </RelativeLayout>

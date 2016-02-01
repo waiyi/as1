@@ -98,7 +98,6 @@ public class DisplayActivity extends AppCompatActivity {
         } catch (IOException e) {
             throw new RuntimeException();
         }
-        //return tweets.toArray(new String[tweets.size()]);
     }
 
     public static ListAdapter getAdapter() {

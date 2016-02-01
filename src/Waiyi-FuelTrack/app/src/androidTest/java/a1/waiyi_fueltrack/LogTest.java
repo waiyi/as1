@@ -15,7 +15,11 @@ public class LogTest extends ActivityInstrumentationTestCase2{
     public void testAccumTotal(){
         LogList test1 = new LogList();
         assertEquals(0.0, test1.getAccumTotal());
-        Entry testEntry = new Entry("2000-01-01", "Oliver",45.9, "regular", 55.2, 89.0);
+        double amount = 55.2;
+        double unitCost = 89.0;
+        double total = amount*unitCost/100;
+
+        Entry testEntry = new Entry("2000-01-01", "Oliver",45.9, "regular", amount, unitCost, total);
         test1.add(testEntry);
         assertEquals(testEntry.getTotal(), test1.getAccumTotal());
         assertTrue(Math.abs(testEntry.getTotal() - test1.getAccumTotal()) < 0.00001);

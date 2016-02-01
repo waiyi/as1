@@ -20,7 +20,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class OverallActivity extends AppCompatActivity {
-
+    private TextView textDate;
+    private TextView textTotal;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +31,18 @@ public class OverallActivity extends AppCompatActivity {
 
         // quoted DateFormat from:
         // http://www.mkyong.com/java/java-how-to-get-current-date-time-date-and-calender/
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd\n HH:mm a");
         Date date = new Date();
         String message = ("As of " + (dateFormat.format(date)));
 
-        TextView textDate = new TextView(this);
-  //      textDate.setTextSize(20);
+        textDate = new TextView(this);
         textDate.setText(message);
 
-        TextView textTotal = (TextView) findViewById(R.id.textTotal);
- //       textTotal.setTextSize(20);
-        String df = new DecimalFormat("#0.00").format(DisplayActivity.getLogList().getAccumTotal());
-        textTotal.setText(df);
+        textTotal = (TextView) findViewById(R.id.textTotal);
+        textTotal.setTextSize(20);
+        String df = new DecimalFormat("###0.00").format(DisplayActivity.getLogList().getAccumTotal());
+        textTotal.setText("$ " + df);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.content_overall);
         layout.addView(textDate);
@@ -55,5 +56,4 @@ public class OverallActivity extends AppCompatActivity {
             }
         });
     }
-
 }

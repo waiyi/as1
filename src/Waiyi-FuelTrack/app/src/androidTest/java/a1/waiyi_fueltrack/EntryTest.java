@@ -13,12 +13,13 @@ public class EntryTest extends ActivityInstrumentationTestCase2 {
 
     }
 
-
     public void testUpdateTotalCost(){
         double amount = 55;
         double unitCost = 64.9;
-        Entry testEntry = new Entry("2011-10-31", "oxford", 60.2, "premium", amount, unitCost);
+        double total = amount*unitCost/100;
 
-        assertTrue(Math.abs(amount*unitCost/100 - testEntry.getTotal())<0.00001);
+        Entry testEntry = new Entry("2011-10-31", "oxford", 60.2, "premium", amount, unitCost, total);
+
+        assertTrue(Math.abs(total - testEntry.getTotal())<0.00001);
     }
 }
