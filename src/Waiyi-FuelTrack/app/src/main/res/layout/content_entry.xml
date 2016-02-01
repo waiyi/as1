@@ -94,32 +94,12 @@
         android:layout_alignStart="@+id/odometer"
         android:hint="@string/grade" />
     <TextView
-        android:id="@+id/checkUnit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Unit Cost"
-        android:textSize="10pt"
-        android:layout_below="@+id/grade"
-        android:layout_alignParentStart="true"
-        android:checked="false" />
-    <EditText
-        android:id="@+id/unit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_gravity="fill_horizontal"
-        android:layout_below="@+id/grade"
-        android:layout_alignStart="@+id/grade"
-        android:hint="@string/unit" />
-
-    <TextView
         android:id="@+id/checkAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Amount"
         android:textSize="10pt"
-        android:layout_below="@+id/unit"
+        android:layout_below="@+id/grade"
         android:layout_alignParentStart="true"
         android:checked="false" />
     <EditText
@@ -129,18 +109,29 @@
         android:inputType="text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_gravity="fill_horizontal"
-        android:layout_below="@+id/unit"
-        android:layout_alignStart="@+id/unit"
+        android:layout_below="@+id/grade"
+        android:layout_alignStart="@+id/grade"
         android:hint="@string/amount" />
     <TextView
+        android:id="@+id/checkUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/total"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/overall"
+        android:text="Unit Cost"
         android:textSize="10pt"
         android:layout_below="@+id/amount"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+    <EditText
+        android:id="@+id/unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="fill_horizontal"
+        android:layout_below="@+id/amount"
+        android:layout_alignStart="@+id/amount"
+        android:hint="@string/unit" />
+
     <Button
         android:id="@+id/save"
         android:layout_width="wrap_content"
@@ -148,7 +139,7 @@
         android:text="@string/save"
         android:layout_gravity="center_horizontal"
         android:onClick="save"
-        android:layout_below="@+id/amount"
+        android:layout_below="@+id/unit"
         android:layout_alignEnd="@+id/grade"
         android:layout_marginTop="64dp" />
 
