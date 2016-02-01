@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
@@ -28,8 +29,10 @@ public class ViewLogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_log);
 
         Button newButton = (Button) findViewById(R.id.newEntry);
-  //      Button editButton = (Button) findViewById(R.id.edit);
+
         Button backButton = (Button) findViewById(R.id.back);
+
+        Button editButton = (Button) findViewById(R.id.edit);
 
         newButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -40,15 +43,16 @@ public class ViewLogActivity extends AppCompatActivity {
 
         //TODO: change this to return clickable index instead of editbutton
         // TODO: use the returned index to load that entry to EditActivity
-     /*   editButton.setOnClickListener(new View.OnClickListener() {
+        editButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(ViewLogActivity.this, EditActivity.class);
-                //TODO: FIXME
-             //   editIndex.getLogIndex();
+
+          //      intent.putExtra("logkey",logIndex);
                 startActivity(intent);
             }
         });
-*/        backButton.setOnClickListener(new View.OnClickListener() {
+
+        backButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(ViewLogActivity.this, DisplayActivity.class);
                 startActivity(intent);
@@ -62,25 +66,16 @@ public class ViewLogActivity extends AppCompatActivity {
         logListView = (ListView) findViewById(R.id.listView2);
 
         logListView.setAdapter(DisplayActivity.getAdapter());
+
+        logListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                logIndex = position;
+            }
+        });
     }
 
-    public static int getLogIndex() { return logIndex; }
-
-    //TODO: fix code properly for clickable
-    // source from http://docs.oracle.com/javase/tutorial/uiswing/components/list.html
-    // tutorial for selecting an item from the ListView to edit
-  //  public ListSelectionModel
-/*    public void valueChanged(ListSelectionEvent e) {
-        if (e.getValueIsAdjusting() == false) {
-
-            if (list.getSelectedIndex() == -1) {
-                //No selection, disable fire button.
-                fireButton.setEnabled(false);
-
-            } else {
-                //Selection, enable the fire button.
-                fireButton.setEnabled(true);
-            }
-        }
-    }*/
+    public static int getLogIndex() {
+        return logIndex;
+    }
 }
+

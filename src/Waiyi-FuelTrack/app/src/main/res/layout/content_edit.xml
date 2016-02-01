@@ -14,10 +14,23 @@
         android:paddingLeft="10dp"
         android:text="My Log History" />
 
-    <ListView
+    <Button
+        android:id="@+id/saveUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView" />
-
-
+        android:text="@string/button_editlog"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:id="@+id/newEntry"
+        android:layout_width="fill_parent"
+        android:text="@string/button_addEntry"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:layout_gravity="center_horizontal"
+        android:onClick="back"
+        android:paddingRight="20dp" />
 </LinearLayout>

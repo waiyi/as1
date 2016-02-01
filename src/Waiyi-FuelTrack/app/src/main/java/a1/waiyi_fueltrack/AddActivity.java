@@ -56,13 +56,11 @@ public class AddActivity extends AppCompatActivity {
                 String textGrade = addGrade.getText().toString();
                 double textAmt =  Double.parseDouble(addAmt.getText().toString());
                 double textUnit =  Double.parseDouble(addUnit.getText().toString());
-                double textTotal = textAmt*textUnit/100;
 
-                newEntry = new Entry(textDate, textStation, textOdo, textGrade, textAmt, textUnit,
-                                    textTotal);
-                if ((textDate == "") &&((textStation == "") | (textTotal == 0.0))) {
-                    //TODO: popup message "Entry not Saved" and do nothing or jump back to menu
-                }
+                newEntry = new Entry(textDate, textStation, textOdo, textGrade, textAmt, textUnit);
+         //       if ((textDate == "") &&((textStation == "") | (textTotal == 0.0))) {
+            //        //TODO: popup message "Entry not Saved" and do nothing or jump back to menu
+           //     }
 
                 if (ViewLogActivity.getLogIndex()== -1){
                     DisplayActivity.getLogList().add(newEntry);

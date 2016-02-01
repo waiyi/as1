@@ -23,10 +23,12 @@
     <string name="back">Back to Menu</string>
     <string name="total_overall"> The total fuel costs is </string>
     <string name="title_activity_add">AddActivity</string>
-
+    <string name="editEntry">Edit Activity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_view_log">ViewLogActivity</string>
     <string name="title_activity_view_list">ViewListActivity</string>
     <string name="title_activity_edit">EditActivity</string>
+    <string name="edit">Edit Activity</string>
+    <string name="saveUpdate">Save Update</string>
 
 </resources>

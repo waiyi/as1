@@ -28,7 +28,7 @@ public class Entry implements Logable
     private double total;
 
     public Entry(String aDate, String aStation, double aOdometer, String aGrade, double aAmount,
-                 double aUnitCost, double aTotal)
+                 double aUnitCost)
     {
         this.date = aDate;
         this.station = aStation;
@@ -37,7 +37,6 @@ public class Entry implements Logable
         this.amount= aAmount;
         this.unitCost = aUnitCost;
         updateTotalCost();
-        this.total = aTotal;
 
     }
 

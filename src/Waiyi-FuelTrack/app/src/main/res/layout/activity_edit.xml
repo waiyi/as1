@@ -10,5 +10,6 @@
     android:paddingTop="50dp"
     android:paddingLeft="20dp"
     android:weightSum="1" >
+    <include layout="@layout/content_edit" />
 
 </LinearLayout>
