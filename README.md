@@ -14,4 +14,4 @@ Files submitted includes:
   |--bin - apk  
 
 App demo on youtube:  
-https://youtu.be/Tux6yUu8bGA   
+https://www.youtube.com/watch?v=am4V0KptH18  
