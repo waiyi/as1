@@ -30,14 +30,8 @@ import java.util.ArrayList;
 
 // should have an select button to allow user for editing a selected entry
 public class EditActivity extends AppCompatActivity {
-    //TODO: confirm whether editLog and editIndex if they are correct
-    //TODO: call adapter to get clickable index number
-    private int editIndex;
-//    private String totalCost;
-    private ListView editListView;
-    private LogList editLog;
-    private Entry editEntry;
 
+    private Entry editEntry;
     private EditText editDate;
     private EditText editStation;
     private EditText editOdo;
@@ -120,21 +114,3 @@ public class EditActivity extends AppCompatActivity {
         }
     }
 }
-
-//Intent intent = getIntent();
-
-//     editIndex = ViewLogActivity.getLogIndex();
-//
-//    editLog = DisplayActivity.getLogList();
-
-//    editEntry = editLog(editIndex);
-
-
-  /*      editDate = (EditText) findViewById(R.id.date);
-        editStation = (EditText) findViewById(R.id.station);
-        editOdo = (EditText) findViewById(R.id.odometer);
-        editGrade = (EditText) findViewById(R.id.grade);
-        editAmt = (EditText) findViewById(R.id.amount);
-        editUnit = (EditText) findViewById(R.id.unit);
-        //eachTotal = editLog.getTotal();
-  */

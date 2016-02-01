@@ -19,7 +19,7 @@ public class LogTest extends ActivityInstrumentationTestCase2{
         double unitCost = 89.0;
         double total = amount*unitCost/100;
 
-        Entry testEntry = new Entry("2000-01-01", "Oliver",45.9, "regular", amount, unitCost, total);
+        Entry testEntry = new Entry("2000-01-01", "Oliver",45.9, "regular", amount, unitCost);
         test1.add(testEntry);
         assertEquals(testEntry.getTotal(), test1.getAccumTotal());
         assertTrue(Math.abs(testEntry.getTotal() - test1.getAccumTotal()) < 0.00001);
